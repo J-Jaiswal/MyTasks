@@ -1,79 +1,93 @@
-/* app/globals.css */
-
-/* Global Reset */
-* {
+/* Global Styles */
+body {
+  font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background-color: #f0f4f8; /* Light background for a soft look */
+  color: #333; /* Dark text for readability */
 }
 
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f7f6;
-  color: #333;
-  line-height: 1.6;
-}
-
-.container {
-  max-width: 600px;
-  margin: 40px auto;
+header {
+  background-color: #007acc; /* Header color */
+  color: white;
   padding: 20px;
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
-h1,
+h1 {
+  margin: 0;
+  font-size: 2.5rem; /* Larger font size for the title */
+}
+
 h2 {
-  font-weight: bold;
   color: #333;
+  font-size: 1.5rem; /* Slightly larger font size */
+  margin-bottom: 20px; /* Space below the heading */
 }
 
-/* Button Styles */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 80px);
+}
+
+.home-buttons {
+  margin-top: 20px;
+}
+
 .button {
-  padding: 0.6rem 1.2rem;
-  color: #ffffff;
-  background-color: #1e90ff;
+  background-color: #007acc; /* Primary button color */
+  color: white;
   border: none;
-  border-radius: 4px;
+  padding: 12px 20px; /* Increased padding for buttons */
+  margin: 6px 10px;
+  border-radius: 5px;
   cursor: pointer;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s; /* Added transform for hover effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for buttons */
 }
 
 .button:hover {
-  background-color: #1c86ee;
-  box-shadow: 0px 4px 8px rgba(30, 144, 255, 0.3);
+  background-color: #005fa3; /* Darker shade on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
 }
 
-.button:active {
-  transform: scale(0.98);
+.task-form-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 30px; /* Increased padding for more breathing room */
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
 }
 
-/* Form Styles */
-.form {
+.task-form {
   display: flex;
-  gap: 0.8rem;
-  margin-bottom: 1.5rem;
+  flex-direction: column;
 }
 
-.input {
-  flex-grow: 1;
-  padding: 0.6rem 1rem;
-  border: 1px solid #d1d5db;
-  border-radius: 4px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
+.task-input {
+  padding: 12px; /* Increased padding */
+  margin-bottom: 15px; /* Increased margin */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px; /* Consistent font size */
+  transition: border-color 0.3s ease; /* Smooth border color transition */
 }
 
-.input:focus {
-  border-color: #1e90ff;
-  outline: none;
-  box-shadow: 0 0 4px rgba(30, 144, 255, 0.3);
+.task-input:focus {
+  border-color: #007acc; /* Focus state for input */
+  outline: none; /* Remove outline */
 }
 
-/* Task List Styles */
+.task-list-container {
+  padding: 20px;
+}
+
 .task-list {
   list-style: none;
   padding: 0;
@@ -83,53 +97,101 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem 1rem;
-  background-color: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  margin-bottom: 0.6rem;
-  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  padding: 15px; /* Increased padding for item */
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  margin-bottom: 15px; /* Increased margin for spacing */
+  transition: box-shadow 0.3s ease; /* Smooth shadow effect */
 }
 
 .task-item:hover {
-  background-color: #f1f5f9;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Shadow on hover */
 }
 
-/* Task Text */
-.task-item span {
-  font-size: 1rem;
-  color: #4b5563;
-  word-wrap: break-word;
-  flex-grow: 1;
+.edit-input {
+  padding: 10px; /* Consistent padding */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  flex: 1; /* Allow input to grow */
 }
 
-/* Delete Button */
-.delete-button {
-  color: #ef4444;
-  background: none;
-  border: none;
-  cursor: pointer;
+.message {
+  color: green;
   font-weight: bold;
-  font-size: 0.9rem;
-  transition: color 0.2s ease, transform 0.2s ease;
+  margin-top: 15px; /* Space above the message */
+}
+
+.add-button {
+  margin-bottom: 20px; /* Space below the button */
+}
+
+/* .delete-button {
+  background-color: #dc3545; Danger button color
+  transition: background-color 0.3s ease;
 }
 
 .delete-button:hover {
-  color: #dc2626;
-  transform: scale(1.1);
+  background-color: #c82333; Darker shade on hover
+} */
+
+.save-button {
+  background-color: #28a745; /* Success button color */
+  transition: background-color 0.3s ease;
 }
 
-/* Header Styles */
-header {
-  padding: 1rem;
-  background-color: #1e90ff;
-  color: #ffffff;
-  text-align: center;
-  border-radius: 6px 6px 0 0;
+.save-button:hover {
+  background-color: #218838; /* Darker shade on hover */
 }
 
-header h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
+/* .edit-button {
+  background-color: #ffc107; Warning button color
+  transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+  background-color: #e0a800; Darker shade on hover
+} */
+
+/* globals.css or your specific CSS file */
+
+.edit-button,
+.delete-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffc107; /* Blue for Edit */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+  background-color: #e0a800; /* Darker blue on hover */
+}
+
+.delete-button {
+  background-color: #ff4d4f; /* Red for Delete */
+}
+
+.delete-button:hover {
+  background-color: #d43f3a; /* Darker red on hover */
+}
+.update-button {
+  background-color: #4caf50; /* Green for Update */
+  color: white;
+}
+
+.cancel-button {
+  background-color: #ccc; /* Gray for Cancel */
+  color: black;
+}
+.update-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.cancel-button:hover {
+  background-color: #bbb; /* Darker gray on hover */
 }

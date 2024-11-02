@@ -3,13 +3,18 @@
 
 import Link from "next/link";
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <div className="container">
-      <h1>Welcome to the Task Manager</h1>
-      <Link href="/tasks">
-        <button className="button">Go to Task List</button>
-      </Link>
+    <div className="home-container">
+      <h2>Welcome to the Task Management App</h2>
+      <div className="home-buttons">
+        <Link href="/add-task">
+          <button className="button">Add Task</button>
+        </Link>
+        <Link href="/task-list">
+          <button className="button">View Task List</button>
+        </Link>
+      </div>
     </div>
   );
 }

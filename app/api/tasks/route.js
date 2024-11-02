@@ -1,38 +1,43 @@
-// app/api/tasks/route.js
-let tasks = []; // In-memory storage for tasks
+import { NextResponse } from "next/server";
 
-// Handle GET requests
+let tasks = [
+  { id: 1, task: "Sample Task 1" },
+  { id: 2, task: "Sample Task 2" },
+  { id: 3, task: "Sample Task 3" },
+];
+
+// GET all tasks
 export async function GET() {
-  return new Response(JSON.stringify(tasks), {
-    status: 200,
-    headers: { "Content-Type": "application/json" },
-  });
+  return NextResponse.json(tasks);
 }
 
-// Handle POST requests
+// POST a new task
 export async function POST(request) {
-  try {
-    const data = await request.json();
-    const newTask = { ...data, id: crypto.randomUUID() };
-    tasks.push(newTask);
-    return new Response(JSON.stringify(newTask), {
-      status: 201,
-      headers: { "Content-Type": "application/json" },
-    });
-  } catch (error) {
-    console.error("POST Error:", error);
-    return new Response("Error creating task", { status: 500 });
-  }
+  const { task } = await request.json();
+  const newTask = {
+    id: tasks.length + 1,
+    task,
+  };
+  tasks.push(newTask);
+  return NextResponse.json(newTask);
 }
 
-// Handle DELETE requests
+// DELETE a task
 export async function DELETE(request) {
-  try {
-    const { id } = await request.json();
-    tasks = tasks.filter((task) => task.id !== id);
-    return new Response(null, { status: 204 });
-  } catch (error) {
-    console.error("DELETE Error:", error);
-    return new Response("Error deleting task", { status: 500 });
+  const { id } = await request.json();
+  tasks = tasks.filter((task) => task.id !== id);
+  return NextResponse.json({ message: "Task deleted" });
+}
+
+// PUT (update) a task
+export async function PUT(request) {
+  const { id, task } = await request.json();
+  const taskIndex = tasks.findIndex((t) => t.id === id);
+
+  if (taskIndex !== -1) {
+    tasks[taskIndex].task = task;
+    return NextResponse.json(tasks[taskIndex]);
   }
+
+  return NextResponse.json({ message: "Task not found" }, { status: 404 });
 }
