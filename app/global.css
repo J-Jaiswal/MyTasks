@@ -1,0 +1,135 @@
+/* app/globals.css */
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Button Styles */
+.button {
+  padding: 0.6rem 1.2rem;
+  color: #ffffff;
+  background-color: #1e90ff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: #1c86ee;
+  box-shadow: 0px 4px 8px rgba(30, 144, 255, 0.3);
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+/* Form Styles */
+.form {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.input {
+  flex-grow: 1;
+  padding: 0.6rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: #1e90ff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(30, 144, 255, 0.3);
+}
+
+/* Task List Styles */
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  margin-bottom: 0.6rem;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-item:hover {
+  background-color: #f1f5f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Task Text */
+.task-item span {
+  font-size: 1rem;
+  color: #4b5563;
+  word-wrap: break-word;
+  flex-grow: 1;
+}
+
+/* Delete Button */
+.delete-button {
+  color: #ef4444;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.delete-button:hover {
+  color: #dc2626;
+  transform: scale(1.1);
+}
+
+/* Header Styles */
+header {
+  padding: 1rem;
+  background-color: #1e90ff;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 6px 6px 0 0;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
