@@ -1,1 +1,1 @@
-Its a basic application in Next.js
+Its a basic application implementing crud operations in Next.js
