@@ -25,8 +25,8 @@ export default function AddTaskPage() {
   };
 
   return (
-    <div className="task-form-container">
-      <h1>Add New Task</h1>
+    <div className="task-container">
+      {/* <h1>Add New Task</h1> */}
       <AddTask onAdd={handleAddTask} />
       {message && <p className="message">{message}</p>}
     </div>

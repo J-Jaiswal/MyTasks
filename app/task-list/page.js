@@ -39,7 +39,7 @@ export default function TaskListPage() {
   };
 
   return (
-    <div className="task-list-container">
+    <div className="task-container">
       <Link href="/add-task">
         <button className="button add-button">Add New Task</button>
       </Link>

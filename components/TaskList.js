@@ -55,59 +55,63 @@ const TaskList = () => {
   };
 
   return (
-    <div className="task-list-container">
-      <h2>Task List</h2>
-      <ul className="task-list">
-        {tasks.length > 0 ? (
-          tasks.map((task) => (
-            <li key={task.id} className="task-item">
-              {editTaskId === task.id ? (
-                <div>
-                  <input
-                    type="text"
-                    value={editTaskValue}
-                    onChange={(e) => setEditTaskValue(e.target.value)}
-                    className="edit-input"
-                  />
-                  <button
-                    onClick={() => handleUpdate(task.id)}
-                    className="update-button"
-                  >
-                    Update
-                  </button>
-                  <button
-                    onClick={() => setEditTaskId(null)}
-                    className="cancel-button"
-                  >
-                    Cancel
-                  </button>
-                </div>
-              ) : (
-                <div>
-                  <span>{task.task}</span>
-                  <button
-                    onClick={() => handleEdit(task)}
-                    className="edit-button"
-                  >
-                    Edit
-                  </button>
-                  <button
-                    onClick={() => handleDelete(task.id)}
-                    className="delete-button"
-                  >
-                    Delete
-                  </button>
-                </div>
-              )}
-            </li>
-          ))
-        ) : (
-          <li>No tasks available.</li>
-        )}
-      </ul>
-      <Link href="/" passHref>
-        <button className="button">Back to Home</button>
-      </Link>
+    <div className="task-all-container">
+      <div className="task-list-container">
+        <h2>Task List</h2>
+        <div className="task-list">
+          {tasks.length > 0 ? (
+            tasks.map((task) => (
+              <div key={task.id} className="task-item">
+                {editTaskId === task.id ? (
+                  <div className="">
+                    <input
+                      type="text"
+                      value={editTaskValue}
+                      onChange={(e) => setEditTaskValue(e.target.value)}
+                      className="edit-input"
+                    />
+                    <div className="">
+                      <button
+                        onClick={() => handleUpdate(task.id)}
+                        className="update-button"
+                      >
+                        Update
+                      </button>
+                      <button
+                        onClick={() => setEditTaskId(null)}
+                        className="cancel-button"
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <div>
+                    <span>{task.task}</span>
+                    <button
+                      onClick={() => handleEdit(task)}
+                      className="edit-button"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      onClick={() => handleDelete(task.id)}
+                      className="delete-button"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                )}
+              </div>
+            ))
+          ) : (
+            <li>No tasks available.</li>
+          )}
+        </div>
+        <Link href="/" passHref>
+          <button className="button">Back to Home</button>
+        </Link>
+      </div>
     </div>
   );
 };

@@ -58,7 +58,7 @@ h2 {
 
 .task-form-container {
   max-width: 400px;
-  margin: auto;
+  margin: 30px 0px 30px 0px;
   padding: 30px; /* Increased padding for more breathing room */
   background: white;
   border-radius: 8px;
@@ -73,6 +73,7 @@ h2 {
 .task-input {
   padding: 12px; /* Increased padding */
   margin-bottom: 15px; /* Increased margin */
+  width: 350px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px; /* Consistent font size */
@@ -84,24 +85,59 @@ h2 {
   outline: none; /* Remove outline */
 }
 
-.task-list-container {
-  padding: 20px;
+.task-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 30px 0px 30px 0px;
+}
+.task-all-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* padding: 30px; */
+  /* background-color: #28a745; */
 }
 
+.task-list-container {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  display: flex; */
+
+  /* justify-content: space-between; */
+  padding: 20px;
+  width: 50%;
+}
+
+/* .task-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #218838;
+  padding: 30px;
+} */
 .task-list {
   list-style: none;
   padding: 0;
+  width: 100%;
 }
 
 .task-item {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 15px; /* Increased padding for item */
+  /* align-items: center; */
+  /* width: 700px; */
+  padding: 15px;
   background: #ffffff;
   border: 1px solid #e6e6e6;
   border-radius: 5px;
-  margin-bottom: 15px; /* Increased margin for spacing */
+  margin-bottom: 15px;
   transition: box-shadow 0.3s ease; /* Smooth shadow effect */
 }
 
